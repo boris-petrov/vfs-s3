@@ -100,8 +100,8 @@ class ObjectContentHolder implements Closeable {
             throw new FileSystemException("Content holder was closed");
         }
 
-        if (openForRead || openForWrite) {
-            throw new FileSystemException("Close stream before using it for read");
+        if (openForWrite) {
+            throw new FileSystemException("Close write stream before using it for read");
         }
 
         try {
